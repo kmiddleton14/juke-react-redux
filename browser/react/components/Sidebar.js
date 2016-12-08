@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export default function (props) {
 
   const playlists = props.playlists;
-
+  
   return (
     <sidebar>
       <img src="juke.svg" className="logo"/>

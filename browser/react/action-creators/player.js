@@ -77,10 +77,14 @@ export const startSong = (song, list) => {
 export const toggleSong = (song, list) => {
   return (dispatch, getState) => {
     const currentState = getState().player;
-    if (currentState.currentSong.id === song.id) {
+
+    var reassignSong = !song  ? getState().player.currentSong : song;
+    var reassignList = !list  ? getState().player.currentSongList : list;
+
+    if (currentState.currentSong.id === reassignSong.id) {
       dispatch(currentState.isPlaying ? pause() : play());
     } else {
-      dispatch(startSong(song, list));
+      dispatch(startSong(reassignSong, reassignList));
     }
   };
 };

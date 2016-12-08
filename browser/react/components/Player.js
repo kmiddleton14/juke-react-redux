@@ -8,6 +8,7 @@ export default function (props) {
   const prev = props.prev;
   const toggle = props.toggle;
   const next = props.next;
+  console.log("player props: ", props)
 
   return (
     <footer>
